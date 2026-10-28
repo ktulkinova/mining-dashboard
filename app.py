@@ -68,5 +68,6 @@ settings = {
     "Max distance from moving average (%)": percent,
     "Grubbs alpha": alpha,
 }
-pdf = make_report(df, mines, stats, anomalies, settings, chart_type, degree)
-st.download_button("Download PDF report", pdf, "mining_report.pdf", "application/pdf")
+if st.button("Generate PDF report"):
+    pdf = make_report(df, mines, stats, anomalies, settings, chart_type, degree)
+    st.download_button("Download PDF report", pdf, "mining_report.pdf", "application/pdf")
